@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Currículo Virtual — Breno_Chiaradia</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <!-- Botão Modo Noturno -->
+        <button id="darkModeToggle">🌙</button>
+
+        <div class="avatar">
+          <img
+            src="https://media.licdn.com/dms/image/v2/D4D03AQEUV04yjEm-iA/profile-displayphoto-shrink_200_200/B4DZUj3QnOG4Ac-/0/1740063444654?e=1766016000&v=beta&t=-ILSRey_eTha-lQY_Yxz01XS9eUGJoGJ4ZAY4xz6Jds"
+            alt="Avatar de Breno"
+          />
+        </div>
+        <div>
+          <h1>
+            Breno Correia Chiaradia Santos
+            <span
+              id="visitCounter"
+              style="font-size: 16px; color: var(--muted); margin-left: 10px"
+            >
+              Visitantes: 0
+            </span>
+          </h1>
+          <h2>
+            Estudante de ADS • Apaixonado por programação, guitarra e games
+          </h2>
+          <nav>
+            <a class="btn" href="#sobre">Sobre</a>
+            <a class="btn" href="#estudos">Estudos</a>
+            <a class="btn" href="#skills">Habilidades</a>
+            <a class="btn" href="#projetos">Projetos</a>
+            <a class="btn" href="#contato">Contato</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section>
+          <div id="sobre" class="card profile">
+            <h3>Sobre mim</h3>
+            <p>
+              Eai! Eu sou o Breno, estudo Analise e Desenvolvimento de Sistemas
+              na faculdade Serra Dourada em Lorena-SP, eu gosto de aprender
+              todos os dias. Meu sonho é trabalhar com desenvolvimento tanto
+              front-end como back-end, e criar projetos que ajudem no meu
+              desenvolvimento quanto as pessoas.
+            </p>
+            <p>
+              Fora da programação, eu passo meu tempo tocando guitarra, ouvindo
+              músicas e jogando no meu video game ou até mesmo montando/formando
+              computadores.
+            </p>
+          </div>
+
+          <div id="estudos" class="card" style="margin-top: 14px">
+            <h3>O que estudo</h3>
+            <ul>
+              <li>
+                Programação em Java e Python — estruturas de dados, POO e
+                algoritmos
+              </li>
+              <li>Banco de Dados — SQL, modelagem</li>
+              <li>Desenvolvimento Web — HTML, CSS e JavaScript</li>
+              <li>
+                Redes — Modelo OSI/TCP-IP, endereçamento IP, HTTP/HTTPS,
+                FTP/SMTP
+              </li>
+            </ul>
+          </div>
+
+          <div id="projetos" class="card" style="margin-top: 14px">
+            <h3>Projetos</h3>
+            <div class="projects">
+              <div class="project">
+                <strong>Currículo Virtual</strong>
+                <p
+                  style="color: var(--muted); font-size: 13px; margin-top: 4px"
+                >
+                  Este próprio site.
+                </p>
+              </div>
+
+              <div class="project">
+                <strong>Desafio dos 100 Exercícios de Java</strong>
+                <p style="margin-top: 4px">
+                  Completei 100 exercícios de Java, passando por lógica,
+                  estruturas de repetição, condicionais, métodos e iniciando
+                  Java POO. Também estou estudando MySQL para complementar o
+                  aprendizado.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside>
+          <div class="card">
+            <h3 id="skills">Habilidades</h3>
+            <div class="skills">
+              <span class="skill">Java</span>
+              <span class="skill">Java POO</span>
+              <span class="skill">JavaScript (básico)</span>
+              <span class="skill">Python</span>
+              <span class="skill">SQL</span>
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">Montar PC</span>
+              <span class="skill">Manutenção(basica)</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Contato</h2>
+            <p><strong>Email:</strong> bcorreia629@gmail.com</p>
+            <p>
+              <strong>LinkedIn:</strong>
+              <a
+                href="https://www.linkedin.com/in/breno-chiaradia-66b627352"
+                target="_blank"
+              >
+                linkedin.com/in/breno-chiaradia-66b627352
+              </a>
+            </p>
+            <p>
+              <strong>GitHub:</strong>
+              <a href="https://github.com/Breno-Chiaradia" target="_blank">
+                github.com/Breno-Chiaradiaa
+              </a>
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Meu sonho</h3>
+            <p style="color: var(--muted); font-size: 14px">
+              Conseguir minha primeira vaga como dev ou suporte, colocar em
+              prática tudo que tenho estudado e continuar evoluindo. Quero
+              trabalhar com uma equipe boa, aprender com pessoas experientes, e
+              no futuro, criar meus próprios projetos.
+            </p>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Contador de visitantes
+        let visits = localStorage.getItem("visits");
+        if (!visits) visits = 0;
+        visits = parseInt(visits) + 1;
+        localStorage.setItem("visits", visits);
+        document.getElementById(
+          "visitCounter"
+        ).textContent = `Visitantes: ${visits}`;
+
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach((a) => {
+          a.addEventListener("click", (e) => {
+            e.preventDefault();
+            const id = a.getAttribute("href").slice(1);
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        });
+
+        // Modo Noturno
+        const toggle = document.getElementById("darkModeToggle");
+        toggle.addEventListener("click", () => {
+          document.body.classList.toggle("dark");
+        });
+      });
+    </script>
+  </body>
+</html>
