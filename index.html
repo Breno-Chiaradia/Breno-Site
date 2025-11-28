@@ -19,19 +19,13 @@
             alt="Avatar de Breno"
           />
         </div>
+
         <div>
-          <h1>
-            Breno Correia Chiaradia Santos
-            <span
-              id="visitCounter"
-              style="font-size: 16px; color: var(--muted); margin-left: 10px"
-            >
-              Visitantes: 0
-            </span>
-          </h1>
+          <h1>Breno Correia Chiaradia Santos</h1>
           <h2>
             Estudante de ADS • Apaixonado por programação, guitarra e games
           </h2>
+
           <nav>
             <a class="btn" href="#sobre">Sobre</a>
             <a class="btn" href="#estudos">Estudos</a>
@@ -152,15 +146,6 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // Contador de visitantes
-        let visits = localStorage.getItem("visits");
-        if (!visits) visits = 0;
-        visits = parseInt(visits) + 1;
-        localStorage.setItem("visits", visits);
-        document.getElementById(
-          "visitCounter"
-        ).textContent = `Visitantes: ${visits}`;
-
         // Scroll suave
         document.querySelectorAll('a[href^="#"]').forEach((a) => {
           a.addEventListener("click", (e) => {
